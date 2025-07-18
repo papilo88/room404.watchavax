@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>room404.watch</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: monospace;
+      background: linear-gradient(to bottom right, #000000, #003300);
+      color: #00ff00;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 20px;
+      text-align: center;
+    }
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #00ff00;
+      text-shadow: 0 0 10px #00ff00;
+    }
+    button, input {
+      font-family: monospace;
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: 1px solid #00ff00;
+      background: black;
+      color: #00ff00;
+      margin: 10px;
+      cursor: pointer;
+    }
+    .connect-wallet {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .features, .email-section, .trending {
+      margin-top: 30px;
+    }
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .feature-item {
+      width: 280px;
+      padding: 15px;
+      background-color: rgba(0,0,0,0.6);
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00ff00;
+    }
+  </style>
+</head>
+<body>
+  <div class="logo">room404</div>
+  <button class="connect-wallet" onclick="connectWallet()">Connect Wallet</button>
+
+  <h1>[ room404.watch ]</h1>
+  <h2>Launching inside @TheArenaApp</h2>
+  <h3>soon™</h3>
+  <h1>404 detected</h1>
+  <p><a href="https://x.com/error404_live?s=21" target="_blank">Follow on Twitter</a></p>
+
+  
+<video autoplay muted loop controls style="margin-top: 20px; max-width: 100%; border-radius: 10px; box-shadow: 0 0 15px #00ff00;">
+  <source src="room404_final_trailer.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
+  <button onclick="location.href='coming-soon.html'">Click to enter room404</button>
+
+  <div class="features">
+    <h3>More Reasons to Join</h3>
+    <div class="feature-grid">
+      <div class="feature-item">Enjoy on your TV: Watch on Smart TVs, Playstation, Xbox, Apple TV, Blu-ray and more.</div>
+      <div class="feature-item">Download your shows to watch offline.</div>
+      <div class="feature-item">Watch everywhere: Phone, Tablet, Laptop, TV.</div>
+      <div class="feature-item">Unlimited Movies, TV Shows and Streaming Fun.</div>
+    </div>
+  </div>
+
+  <div class="trending">
+    <h3>🔥 Trending Now</h3>
+    <p>Popular shows and hot releases will appear here...</p>
+  </div>
+
+  <div class="email-section">
+    <h3>Ready to watch?</h3>
+    <p>Enter your email to create or restart your membership.</p>
+    <form action="coming-soon.html" onsubmit="return validateEmail()">
+      <input id="email" type="email" placeholder="Enter your email" required />
+      <button type="submit">Get Started</button>
+    </form>
+  </div>
+
+  <script>
+    function connectWallet() {
+      if (window.ethereum) {
+        window.ethereum.request({ method: 'eth_requestAccounts' })
+          .then(accounts => alert('Connected wallet: ' + accounts[0]))
+          .catch(err => alert('Connection failed: ' + err.message));
+      } else {
+        alert('MetaMask is not installed.');
+      }
+    }
+
+    function validateEmail() {
+      const email = document.getElementById("email").value;
+      if (!email.includes("@")) {
+        alert("Enter a valid email.");
+        return false;
+      }
+      return true;
+    }
+  </script>
+</body>
+</html>
